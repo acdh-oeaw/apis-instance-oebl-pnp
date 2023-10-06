@@ -9,7 +9,7 @@
 {% for text in object.texts.all %}
 <div class="mt-2">
   <h4>{{ text.kind }}</h4>
-  <div class="bg-light border p-2 text-{{text.id}}">
+  <div class="bg-light border p-2 highlight-text" data-textid="{{text.id}}">
   {{ text | highlight_text }}
   </div>
 </div>
@@ -17,3 +17,7 @@
 </div>
 
 {% endblock content %}
+
+{% block scripts2 %}
+<script src="/static/js/highlighter.js"></script>
+{% endblock %}
