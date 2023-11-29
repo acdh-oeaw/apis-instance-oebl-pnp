@@ -96,6 +96,8 @@ def work_form(*args, **kwargs):
     return WorkForm(*args, **kwargs)
 
 
+from apis_ontology.filter import fulltext_search_filter
+
 APIS_ENTITIES = {
         "Event": {
             "form": event_form
@@ -104,7 +106,10 @@ APIS_ENTITIES = {
             "form": institution_form
         },
         "Person": {
-            "form": person_form
+            "form": person_form,
+            "list_filters": {
+                "name": {"method": fulltext_search_filter },
+            },
         },
         "Place": {
             "form": place_form
