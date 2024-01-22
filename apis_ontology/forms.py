@@ -54,6 +54,10 @@ class PersonForm(EntityForm):
         model = Person
         fields = "__all__"
 
+    def clean(self, *args, **kwargs):
+        print(args)
+        print(kwargs)
+
 
 class PlaceForm(EntityForm):
     class Meta:
